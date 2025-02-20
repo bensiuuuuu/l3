@@ -1,0 +1,24 @@
+<html>
+	<body>
+		<table border="1">
+			<tr align="center"><td><img id="pic" src="apple.png" width="300"></td></tr>
+			
+			<tr align="center"><td> <a href="javascript:changePicture('apple')">Apple</a> | 
+				<a href="javascript:changePicture('coffee')">Coffee</a> |
+				<a href="javascript:changePicture('coke')">Coke</a> |
+				<a href="javascript:changePicture('green-salad')">Green-salad</a> |
+				<a href="javascript:changePicture('ice-cream')">ICE-Cream</a> |
+				<a href="javascript:changePicture('pizza')">Pizza</a> |
+				<a href="javascript:changePicture('sandwich')">Sandwich</a> 		
+			 </td></tr>
+			
+		</table>	
+		
+	</body>
+	<script>
+		function changePicture(filename){
+			document.getElementById("pic").src=filename+".png";
+		}
+	</script>
+</html>
+
