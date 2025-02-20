@@ -1,0 +1,71 @@
+<html>
+	<head></head>
+	<body>
+		<h4>Choose Your Fruits</h4>
+		<img src="apple.png" width="50" height="50">
+		<table border=1>
+			<form>
+				<tr><td>Quantity/Fruits</td><td>Type of Fruits</td></tr>
+				<tr><td>Apple $1</td><td><input type="radio" name="apple" value=1>One<input type="radio" name="apple" value=2>Two<input type="radio" name="apple" value=3>Three</td></tr>
+				<tr><td>Orange $2</td><td><input type="radio" name="orange" value=1>One<input type="radio" name="orange" value=2>Two<input type="radio" name="orange" value=3>Three</td></tr>		
+				<tr><td>Pineapple $3</td><td><input type="radio" name="pineapple" value=1>One<input type="radio" name="pineapple" value=2>Two<input type="radio" name="pineapple" value=3>Three</td></tr>				
+				
+				<tr><td><input type="button" onclick="myFunction()" value="Next"></td><td>Submit your response!Thank you</td></tr>
+				
+				
+			</form>
+		</table>
+		
+		<br>
+		<table border=1>
+			<form>
+				<tr><td>Item:</td><td align="center">Your Fruits Purchase</td></tr>
+				<tr><td>Apple Quantity</td><td><span id="item1_price"></span></td></tr>
+				<tr><td>Orange Quantity</td><td><span id="item2_price"></span></tr>				
+				<tr><td>Pineapple Quantity</td><td><span id="item3_price"></span></tr>					
+				
+				<tr><td>Total Price</td><td><span id="total_price"></span></td></tr>
+				
+				
+			</form>
+		</table>		
+		
+		
+		
+		
+		<script>
+			function myFunction(){
+				var x =  document.getElementsByName("apple");
+				var y = document.getElementsByName("orange");
+				var z = document.getElementsByName("pineapple");
+				var apple=0,orange=0,pineapple=0;
+				if (x[0].checked)
+					apple = x[0].value;				
+				else if (x[1].checked)
+					apple = x[1].value;
+				
+				if (y[0].checked)
+					orange = y[0].value;				
+				else if (y[1].checked)
+					orange = y[1].value;
+				
+				if (z[0].checked)
+					pineapple = z[0].value;				
+				else if (z[1].checked)
+					pineapple = z[1].value;				
+				
+				apple = parseInt(apple);
+				orange = parseInt(orange);
+				pineapple = parseInt(pineapple);
+				
+				document.getElementById("item1_price").innerHTML = apple;
+				document.getElementById("item2_price").innerHTML = orange;						
+				document.getElementById("item3_price").innerHTML = pineapple;	
+				
+				document.getElementById("total_price").innerHTML = apple + orange*2+pineapple*3;					
+				
+					
+		}
+		</script>
+	</body>
+</html>
