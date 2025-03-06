@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    body {
+        font-family: sans-serif;
+        padding: 1rem;
+        background-color: white;
+    }
+
+    .view-results {
+        padding: 1rem;
+        cursor: pointer;
+        font-size: inherit;
+        color: white;
+        background: teal;
+        border-radius: 8px;
+        margin-right: 5px;
+    }
+    .my-results {
+        padding: 1rem;
+        border: 1px solid goldenrod;
+    }    
+</style>
+<script>
+    var answers = ["A", "C", "D"],
+    tot = answers.length;
+function getCheckedValue(radioName) {
+    var radios = document.getElementsByName(radioName);
+    for (var y = 0; y < radios.length; y++)
+        if (radios[y].checked) return radios[y].value;
+}
+function getScore() {
+    var score = 0;
+    for (var i = 0; i < tot; i++)
+        if (getCheckedValue("question" + i) === answers[i]) score += 1;
+    return score;
+}
+function returnScore() {
+    document.getElementById("myresults").innerHTML =
+        "Your score is " + getScore() + "/" + tot;
+    if (getScore() > 2) {
+        console.log("Bravo");
+    }
+}
+</script>
+<audio src = "q2.mp3" id = "Audio"></audio>
+    </head>
+    <body>
+        <script>
+            function MyVideo(){
+            document.getElementById("Video").play();   
+          }
+          function MyVideoP(){
+            document.getElementById("Video").pause();   
+          } 
+            function MyAudio(){
+            document.getElementById("Audio").play();   
+          }  
+        </script>
+
+        <center>
+            <h1>Multiple Choice Questions B2C2</h1><br>
+            <table border="1" width="650">
+            <tr align="center">
+            <td>
+                <video src="q1.mp4" width="320" id="Video"></video><br>
+                <button onClick = "MyVideo()" >Play</button>
+                <button onClick = "MyVideoP()" >Pause</button><br>
+                <h4>1. Who wons the race? </h4>
+            </td>
+            <td align="left">
+            A<input type="radio" name="question0" value="A">
+            <span>Peach</span><br>
+            B<input type="radio" name="question0" value="B" />
+            <span>Rosalina</span><br>
+            C<input type="radio" name="question0" value="C" />
+            <span>Daisy</span><br>
+            D<input type="radio" name="question0" value="D" />
+            <span>Pom Pom</span>
+            </td>
+            </tr>
+            <tr align="center">
+            <td><h4>2. Which movie does this theme song come from?</h4>
+            <br><span><button onClick ="MyAudio()">Play</button></td>
+            <td align="left">
+            A<input type="radio" name="question1" value="A">
+            <span>Harry Potter</span><br>
+            B<input type="radio" name="question1" value="B" />
+            <span>StarWalls</span><br>
+            C<input type="radio" name="question1" value="C" />
+            <span>God of Gamblers</span><br>
+            D<input type="radio" name="question1" value="D" />
+            <span>Titanic</span>
+            </td>
+            </tr>
+            <tr align="center">
+            <td><h4>3. What number does the picture represent for counting?</h4><br><img src='q3.gif' width="160"></td>
+            <td align="left">
+            A<input type="radio" name="question2" value="A">
+            <span>5</span><br>
+            B<input type="radio" name="question2" value="B">
+            <span>7</span><br>
+            C<input type="radio" name="question2" value="C">
+            <span>9</span><br>
+            D<input type="radio" name="question2" value="D">
+            <span>10</span>
+            </td>
+            </tr>
+            </table>
+        <br>
+        <button class="view-results" onclick="returnScore()">View Results</button>
+        <span id="myresults" class="my-results">My results will appear here</span>
+    </center>
+    </body>
+</html>
